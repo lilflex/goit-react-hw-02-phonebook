@@ -37,9 +37,12 @@ export const SubmitBtn = styled.button`
   border-radius: 5px;
 
   transition: 250ms background-color;
-
+  :hover{
+    cursor: grab;
+  };
   :active {
+    color: rgb(255, 255, 255);
     background-color: rgb(50, 98, 210);
-
+    cursor: grabbing;
   }
 `;

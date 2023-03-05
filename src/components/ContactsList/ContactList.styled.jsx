@@ -1,9 +1,11 @@
 import styled from '@emotion/styled';
 
-export const ListOfContacts = styled.ol`
-  font-size: 20px;
+export const ListOfContacts = styled.ul`
+  width: 350px;
+  font-size: 16px;
   font-weight: 500;
-  padding-left: 20px;
+  padding-left: 15px;
+  word-wrap: break-word;
 `;
 
 export const ListItem = styled.li`
@@ -11,7 +13,7 @@ export const ListItem = styled.li`
 `;
 
 export const PhoneNumber = styled.span`
-  padding: 0 12px;
+  padding: 0 15px;
 `;
 
 export const DeleteBtn = styled.button`
@@ -20,8 +22,12 @@ export const DeleteBtn = styled.button`
   border: 1px solid;
   border-radius: 3px;
   background-color: rgb(235, 246, 246);
-
+  :hover{
+    cursor: grab;
+  };
   :active {
-    background-color:rgb(50, 98, 210);
+    color: rgb(255, 255, 255);
+    background-color: rgb(50, 98, 210);
+    cursor: grabbing;
   }
 `;

@@ -12,7 +12,7 @@ function ContactsList({ list, search, deleteContact }) {
                 return (
                     <ListItem key={contactID}>
                         {name} <PhoneNumber>{number}</PhoneNumber>
-                        <DeleteBtn onClick={() => deleteContact(contactID)} type='button'>delete</DeleteBtn>
+                        <DeleteBtn onClick={() => deleteContact(contactID)} type='button'>Delete</DeleteBtn>
                     </ListItem>
 
                 );
