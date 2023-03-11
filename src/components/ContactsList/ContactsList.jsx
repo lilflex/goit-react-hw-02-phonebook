@@ -1,35 +1,24 @@
 import PropTypes from 'prop-types';
-import { ListOfContacts, PhoneNumber, DeleteBtn } from './ContactList.styled'
+import { ListItem, ListOfContacts, PhoneNumber, DeleteBtn } from './ContactList.styled'
 
 function ContactsList({ list, search, deleteContact }) {
-  const filteredContact = list.filter(contact =>
-    contact.name.toLowerCase().includes(search.toLowerCase())
-  );
+    const filteredContact = list.filter(contact =>
+        contact.name.toLowerCase().includes(search.toLowerCase())
+    );
 
-  return (
-    <ListOfContacts>
-      {filteredContact.map(({ name, number, contactID }) => (
-        <ListItem
-          key={contactID}
-          name={name}
-          number={number}
-          contactID={contactID}
-          deleteContact={deleteContact}
-        />
-      ))}
-    </ListOfContacts>
-  );
-}
+    return (
+        <ListOfContacts>
+            {filteredContact.map(({ name, number, contactID }) => {
+                return (
+                    <ListItem key={contactID}>
+                        {name} <PhoneNumber>{number}</PhoneNumber>
+                        <DeleteBtn onClick={() => deleteContact(contactID)} type='button'>delete</DeleteBtn>
+                    </ListItem>
 
-function ListItem({ name, number, contactID, deleteContact }) {
-  return (
-    <li>
-      {name} <PhoneNumber>{number}</PhoneNumber>
-      <DeleteBtn onClick={() => deleteContact(contactID)} type='button'>
-        Delete
-      </DeleteBtn>
-    </li>
-  );
+                );
+            })}
+        </ListOfContacts>
+    );
 }
 
 ContactsList.propTypes = {
